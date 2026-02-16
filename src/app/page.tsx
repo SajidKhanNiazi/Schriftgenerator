@@ -7,13 +7,15 @@ import FontCard from '@/components/FontCard';
 import Toast from '@/components/Toast';
 import { fontSections } from '@/lib/fontSections';
 import LazySection from '@/components/LazySection';
+import FontSizeSlider from '@/components/FontSizeSlider';
+import ContentSection from '@/components/ContentSection';
 
 const EXAMPLE_TEXT = 'Hallo Welt';
 
 export default function Home() {
   const [inputText, setInputText] = useState('');
   const [debouncedText, setDebouncedText] = useState('');
-  const [fontSize, setFontSize] = useState<'sm' | 'md' | 'lg'>('md');
+  const [fontSize, setFontSize] = useState<number>(24);
   const [isScrolled, setIsScrolled] = useState(false);
   const [showToast, setShowToast] = useState(false);
 
@@ -52,10 +54,10 @@ export default function Home() {
 
           <div className="container mx-auto px-4 md:px-5 text-center">
             <h1 className="text-3xl md:text-5xl font-extrabold text-slate-900 dark:text-white mb-3 leading-tight">
-              Schriftgenerator – <span className="text-emerald-600 dark:text-emerald-400">Texte online</span> umwandeln
+              Kostenloser Schriftgenerator – <span className="text-emerald-600 dark:text-emerald-400">Texte sofort</span> in schöne Schriftarten ändern
             </h1>
             <p className="text-slate-600 dark:text-slate-400 max-w-lg mx-auto mb-6 text-sm md:text-base animate-fade-in">
-              Über 100 Unicode-Schriftarten für Instagram, WhatsApp und Social Media.
+              Erstelle sofort stilisierte, ausgefallene und coole Styles mit über 200 Unicode-Schriftarten
             </p>
 
             <div className="max-w-2xl mx-auto relative">
@@ -83,20 +85,7 @@ export default function Home() {
               </div>
             </div>
 
-            <div className="mt-4 flex justify-center gap-2">
-              {(['sm', 'md', 'lg'] as const).map((s) => (
-                <button
-                  key={s}
-                  onClick={() => setFontSize(s)}
-                  className={`px-4 py-2.5 rounded-xl text-xs font-bold uppercase tracking-wider transition-all ${fontSize === s
-                    ? 'bg-emerald-600 text-white shadow-lg shadow-emerald-500/25'
-                    : 'bg-slate-100 dark:bg-slate-800 text-slate-500 hover:bg-slate-200 dark:hover:bg-slate-700'
-                    }`}
-                >
-                  {s === 'sm' ? 'Klein' : s === 'md' ? 'Mittel' : 'Groß'}
-                </button>
-              ))}
-            </div>
+            <FontSizeSlider value={fontSize} onChange={setFontSize} />
           </div>
         </section>
 
@@ -104,7 +93,7 @@ export default function Home() {
         <div className="space-y-10 md:space-y-14 py-8">
           {fontSections.map((section, idx) => (
             <LazySection key={section.id} offset={idx < 2 ? '500px' : '200px'}>
-              <section id={`${section.id}-schriftgenerator`} className="scroll-mt-32">
+              <section id={`${section.id}-tool`} className="scroll-mt-32">
                 <div className="container mx-auto px-[16px] md:px-[20px]">
                   <div className="max-w-7xl mx-auto mb-4 pb-1">
                     <h2 className="text-xl md:text-3xl font-bold text-gray-900 dark:text-white flex items-center justify-center md:justify-start gap-3">
@@ -183,96 +172,8 @@ export default function Home() {
           ))}
         </div>
 
-        {/* Popular Use Cases */}
-        <section className="py-16 md:py-20 bg-white dark:bg-slate-900/50">
-          <div className="container mx-auto px-4 max-w-5xl">
-            <div className="text-center mb-12">
-              <h2 className="text-2xl md:text-4xl font-bold text-slate-900 dark:text-white mb-3">
-                Beliebte Einsatzbereiche
-              </h2>
-              <p className="text-slate-600 dark:text-slate-400 max-w-xl mx-auto text-sm md:text-base">
-                Ideal für deine Profile auf Social Media.
-              </p>
-            </div>
-            <div className="grid md:grid-cols-3 gap-8">
-              <div className="p-6 rounded-2xl bg-slate-50 dark:bg-slate-800/50 border border-slate-200 dark:border-slate-700">
-                <div className="text-3xl mb-3">📸</div>
-                <h3 className="text-lg font-bold text-slate-900 dark:text-white mb-2">Instagram Bio</h3>
-                <p className="text-slate-600 dark:text-slate-400 text-sm leading-relaxed">
-                  Fette oder kursive Schriften für deine Bio – wichtig Infos hervorheben.
-                </p>
-              </div>
-              <div className="p-6 rounded-2xl bg-slate-50 dark:bg-slate-800/50 border border-slate-200 dark:border-slate-700">
-                <div className="text-3xl mb-3">💬</div>
-                <h3 className="text-lg font-bold text-slate-900 dark:text-white mb-2">WhatsApp Status</h3>
-                <p className="text-slate-600 dark:text-slate-400 text-sm leading-relaxed">
-                  Unterstreichen, durchstreichen oder stylische Blasen für Status-Meldungen.
-                </p>
-              </div>
-              <div className="p-6 rounded-2xl bg-slate-50 dark:bg-slate-800/50 border border-slate-200 dark:border-slate-700">
-                <div className="text-3xl mb-3">🎵</div>
-                <h3 className="text-lg font-bold text-slate-900 dark:text-white mb-2">TikTok Namen</h3>
-                <p className="text-slate-600 dark:text-slate-400 text-sm leading-relaxed">
-                  Einzigartige Usernamen mit Sonderzeichen und ausgefallenen Schriftarten.
-                </p>
-              </div>
-            </div>
-          </div>
-        </section>
-
-        {/* How to use */}
-        <section className="py-16 md:py-20 bg-slate-50 dark:bg-slate-900/30">
-          <div className="container mx-auto px-4 max-w-4xl">
-            <div className="text-center mb-12">
-              <h2 className="text-2xl md:text-4xl font-bold text-slate-900 dark:text-white mb-3">
-                So funktioniert’s
-              </h2>
-            </div>
-            <div className="grid md:grid-cols-3 gap-6">
-              {[
-                { step: 1, title: 'Text eingeben', desc: 'Text oben eingeben – der Generator wandelt in Echtzeit um.' },
-                { step: 2, title: 'Schrift wählen', desc: 'Durch Kategorien scrollen und passende Schrift tippen.' },
-                { step: 3, title: 'Kopieren', desc: 'Auf die Karte tippen – Text wird kopiert, überall einfügbar.' }
-              ].map((item) => (
-                <div key={item.step} className="p-6 rounded-2xl bg-white dark:bg-slate-800/50 border border-slate-200 dark:border-slate-700">
-                  <div className="w-10 h-10 bg-emerald-500 text-white rounded-xl flex items-center justify-center mb-4 text-lg font-bold">
-                    {item.step}
-                  </div>
-                  <h3 className="text-lg font-bold text-slate-900 dark:text-white mb-2">{item.title}</h3>
-                  <p className="text-slate-600 dark:text-slate-400 text-sm leading-relaxed">{item.desc}</p>
-                </div>
-              ))}
-            </div>
-          </div>
-        </section>
-
-        {/* FAQ */}
-        <section className="py-16 md:py-20 bg-white dark:bg-slate-950">
-          <div className="container mx-auto px-4 max-w-3xl">
-            <h2 className="text-2xl md:text-4xl font-bold text-slate-900 dark:text-white text-center mb-10">
-              Häufige Fragen
-            </h2>
-            <div className="space-y-3">
-              {[
-                { q: "Wie kopiere ich auf dem Handy?", a: "Tippe direkt auf die Schriftart. Ein grüner Haken bestätigt den Kopiervorgang." },
-                { q: "Sind die Schriften sicher?", a: "Ja! Unicode-Zeichen, die auf Instagram, WhatsApp & Co funktionieren." },
-                { q: "Ist es kostenlos?", a: "Ja, absolut. Keine Werbung, keine Anmeldung." }
-              ].map((item, idx) => (
-                <details key={idx} className="rounded-xl border border-slate-200 dark:border-slate-700 overflow-hidden bg-slate-50/50 dark:bg-slate-800/30">
-                  <summary className="flex items-center justify-between p-4 cursor-pointer font-semibold text-slate-900 dark:text-white list-none hover:bg-slate-100/50 dark:hover:bg-slate-700/30">
-                    {item.q}
-                    <div className="ml-4 w-8 h-8 rounded-lg bg-slate-200 dark:bg-slate-700 flex items-center justify-center group-open:rotate-180 transition-transform shrink-0">
-                      <svg className="w-4 h-4 text-slate-500" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2.5} d="M19 9l-7 7-7-7" />
-                      </svg>
-                    </div>
-                  </summary>
-                  <div className="px-4 pb-4 pt-0 text-slate-600 dark:text-slate-400 text-sm leading-relaxed">{item.a}</div>
-                </details>
-              ))}
-            </div>
-          </div>
-        </section>
+        {/* SEO Content Section */}
+        <ContentSection />
       </main>
 
       {/* Floating Back to Top */}

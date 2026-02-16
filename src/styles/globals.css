@@ -3,40 +3,68 @@
 @tailwind utilities;
 
 :root {
-  /* Backgrounds */
-  --bg-primary: #0f172a;
-  /* Main background */
-  --bg-card: #1e293b;
-  /* Card background */
-  --bg-input: #334155;
-  /* Input field */
+  /* Backgrounds - Soft SaaS Neutrals */
+  --bg-primary: #ffffff;
+  --bg-secondary: #f8fafc;
+  --bg-tertiary: #f1f5f9;
 
-  /* Text */
-  --text-primary: #f1f5f9;
-  /* Main text */
-  --text-secondary: #94a3b8;
-  /* Labels */
+  /* Text - High Readability, Reduced Contrast Eye Strain */
+  --text-primary: #1e293b;
+  /* Slate 800 */
+  --text-secondary: #475569;
+  /* Slate 600 */
   --text-muted: #64748b;
-  /* Hints */
+  /* Slate 500 */
 
-  /* Accent */
-  --accent: #059669;
-  /* Primary actions */
-  --accent-hover: #047857;
-  /* Hover state */
+  /* Accent - Softer Emerald */
+  --accent: #10b981;
+  --accent-hover: #059669;
   --success: #10b981;
-  /* Copy success */
 
   /* Borders */
-  --border: #334155;
-  /* Subtle borders */
+  --border: #e2e8f0;
 
-  /* Spacing */
-  --space-xs: 4px;
-  --space-sm: 8px;
-  --space-md: 12px;
-  --space-lg: 16px;
-  --space-xl: 20px;
+  /* Premium Shadows */
+  --shadow-sm: 0 1px 2px 0 rgb(0 0 0 / 0.05);
+  --shadow-md: 0 4px 6px -1px rgb(0 0 0 / 0.1), 0 2px 4px -2px rgb(0 0 0 / 0.1);
+  --shadow-lg: 0 10px 15px -3px rgb(0 0 0 / 0.1), 0 4px 6px -4px rgb(0 0 0 / 0.1);
+  --shadow-xl: 0 20px 25px -5px rgb(0 0 0 / 0.1), 0 8px 10px -6px rgb(0 0 0 / 0.1);
+}
+
+.dark {
+  --bg-primary: #0f172a;
+  --bg-secondary: #1e293b;
+  --bg-tertiary: #334155;
+
+  --text-primary: #f8fafc;
+  --text-secondary: #cbd5e1;
+  --text-muted: #94a3b8;
+
+  --border: #334155;
+}
+
+@layer components {
+  .glass-premium {
+    @apply backdrop-blur-xl bg-white/70 dark:bg-slate-900/70 border border-white/20 dark:border-slate-800/50;
+  }
+
+  .glow-shadow-emerald {
+    box-shadow: 0 0 20px -5px rgba(16, 185, 129, 0.2);
+  }
+
+  .glow-shadow-slate {
+    box-shadow: 0 0 25px -5px rgba(30, 41, 59, 0.1);
+  }
+}
+
+@layer utilities {
+  .bg-mesh-emerald {
+    background-image:
+      radial-gradient(at 0% 0%, rgba(16, 185, 129, 0.05) 0px, transparent 50%),
+      radial-gradient(at 100% 0%, rgba(20, 184, 166, 0.05) 0px, transparent 50%),
+      radial-gradient(at 100% 100%, rgba(16, 185, 129, 0.05) 0px, transparent 50%),
+      radial-gradient(at 0% 100%, rgba(20, 184, 166, 0.05) 0px, transparent 50%);
+  }
 }
 
 @layer utilities {

@@ -6,16 +6,15 @@ export default function Footer() {
       <div className="container mx-auto px-4 max-w-7xl">
         <div className="grid grid-cols-1 md:grid-cols-4 gap-12 mb-16">
           <div className="col-span-1 md:col-span-2">
-            <div className="flex items-center gap-2 mb-6">
-              <div className="w-8 h-8 bg-emerald-600 rounded-lg flex items-center justify-center shadow-lg shadow-emerald-600/20">
-                <span className="text-white font-black text-sm">S</span>
+            <div className="flex items-center gap-2 mb-6 transition-transform hover:scale-105 duration-300 origin-left">
+              <div className="flex items-baseline gap-0.5">
+                <span className="text-2xl font-black tracking-tighter text-white">
+                  Schriftgenerator
+                </span>
               </div>
-              <span className="text-xl font-black tracking-tight">
-                Schrift<span className="text-emerald-400">generator</span>
-              </span>
             </div>
             <p className="text-gray-400 leading-relaxed max-w-sm mb-6">
-              Der ultimative Schriftgenerator für Ihre Texte. Verwandeln Sie Ihren Text sofort online in mehr als 100 stylische Unicode-Schriften.
+              Der ultimative Generator für Ihre Texte. Verwandeln Sie Ihren Text sofort online in mehr als 100 stylische Unicode-Schriften.
             </p>
             <div className="flex gap-4">
               <div className="w-10 h-10 rounded-full bg-gray-800 flex items-center justify-center hover:bg-emerald-600 transition-colors cursor-pointer">
@@ -28,18 +27,21 @@ export default function Footer() {
           </div>
           <div>
             <h4 className="text-white font-bold mb-6">Navigation</h4>
-            <ul className="space-y-4 text-gray-400 text-sm">
+            <ul className="space-y-3 text-gray-400 text-sm">
               <li><Link href="/" className="hover:text-emerald-400 transition-colors">Startseite</Link></li>
-              <li><Link href="/impressum" className="hover:text-emerald-400 transition-colors">Impressum</Link></li>
-              <li><Link href="/datenschutz" className="hover:text-emerald-400 transition-colors">Datenschutz</Link></li>
-              <li><Link href="/agb" className="hover:text-emerald-400 transition-colors">AGB</Link></li>
+              <li><Link href="/instagram-schrift" className="hover:text-emerald-400 transition-colors">Instagram Schrift</Link></li>
+              <li><Link href="/ueber-uns" className="hover:text-emerald-400 transition-colors">Über uns</Link></li>
+              <li><Link href="/kontakt" className="hover:text-emerald-400 transition-colors">Kontakt</Link></li>
             </ul>
           </div>
           <div>
-            <h4 className="text-white font-bold mb-6">Support</h4>
-            <p className="text-gray-400 text-sm leading-relaxed">
-              Fragen oder Feedback? Kontaktieren Sie uns über unsere Social-Media-Kanäle. 100% Kostenlos.
-            </p>
+            <h4 className="text-white font-bold mb-6">Rechtliches</h4>
+            <ul className="space-y-3 text-gray-400 text-sm">
+              <li><Link href="/impressum" className="hover:text-emerald-400 transition-colors">Impressum</Link></li>
+              <li><Link href="/datenschutz" className="hover:text-emerald-400 transition-colors">Datenschutz</Link></li>
+              <li><Link href="/agb" className="hover:text-emerald-400 transition-colors">AGB</Link></li>
+              <li><Link href="/haftungsausschluss" className="hover:text-emerald-400 transition-colors">Haftungsausschluss</Link></li>
+            </ul>
           </div>
         </div>
         <div className="pt-8 border-t border-gray-800 flex flex-col md:flex-row justify-between items-center gap-4 text-gray-500 text-xs">

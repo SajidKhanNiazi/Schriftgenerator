@@ -4,6 +4,7 @@ import { useState, useEffect } from 'react';
 import { fontStyles } from '@/lib/fonts';
 import FontCard from '@/components/FontCard';
 import Toast from '@/components/Toast';
+import FontSizeSlider from '@/components/FontSizeSlider';
 
 interface FontItem {
   id: string;
@@ -21,7 +22,7 @@ const EXAMPLE_TEXT = 'Dein Text';
 export default function InstagramSchriftClient() {
   const [inputText, setInputText] = useState('');
   const [debouncedText, setDebouncedText] = useState('');
-  const [fontSize, setFontSize] = useState<'sm' | 'md' | 'lg'>('md');
+  const [fontSize, setFontSize] = useState<number>(24);
   const [showToast, setShowToast] = useState(false);
 
   const getGen = (key: string) => fontStyles[key] || ((t: string) => t);
@@ -229,20 +230,7 @@ export default function InstagramSchriftClient() {
             </div>
           </div>
 
-          <div className="mt-4 flex justify-center gap-2">
-            {(['sm', 'md', 'lg'] as const).map((s) => (
-              <button
-                key={s}
-                onClick={() => setFontSize(s)}
-                className={`px-4 py-2.5 rounded-xl text-xs font-bold uppercase tracking-wider transition-all ${fontSize === s
-                  ? 'bg-emerald-600 text-white shadow-lg shadow-emerald-500/25'
-                  : 'bg-slate-100 dark:bg-slate-800 text-slate-500 hover:bg-slate-200 dark:hover:bg-slate-700'
-                  }`}
-              >
-                {s === 'sm' ? 'Klein' : s === 'md' ? 'Mittel' : 'Groß'}
-              </button>
-            ))}
-          </div>
+          <FontSizeSlider value={fontSize} onChange={setFontSize} />
         </div>
       </section>
 

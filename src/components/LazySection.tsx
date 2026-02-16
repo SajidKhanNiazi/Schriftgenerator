@@ -8,10 +8,15 @@ interface LazySectionProps {
 }
 
 export default function LazySection({ children, offset = '200px' }: LazySectionProps) {
-    const [isVisible, setIsVisible] = useState(false);
+    const [isVisible, setIsVisible] = useState(true); // Start as true to prevent hydration mismatch
+    const [shouldLazy, setShouldLazy] = useState(false);
     const ref = useRef<HTMLDivElement>(null);
 
     useEffect(() => {
+        // Only enable lazy loading on client side
+        setShouldLazy(true);
+        setIsVisible(false);
+
         const el = ref.current;
         if (!el) return;
 
@@ -29,5 +34,5 @@ export default function LazySection({ children, offset = '200px' }: LazySectionP
         return () => observer.unobserve(el);
     }, [offset]);
 
-    return <div ref={ref}>{isVisible ? children : <div className="h-96" />}</div>;
+    return <div ref={ref}>{(isVisible || !shouldLazy) ? children : <div className="h-96" />}</div>;
 }

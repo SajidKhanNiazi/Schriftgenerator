@@ -1,12 +1,29 @@
 import type { Metadata, Viewport } from 'next';
-import { Inter } from 'next/font/google';
+import { Inter, Pacifico, Great_Vibes, Dancing_Script } from 'next/font/google';
 import '../styles/globals.css';
 
 // Load Inter font with optimized settings
-const inter = Inter({ 
+const inter = Inter({
   subsets: ['latin'],
   display: 'swap',
   variable: '--font-inter',
+});
+
+const pacifico = Pacifico({
+  weight: '400',
+  subsets: ['latin'],
+  variable: '--font-pacifico',
+});
+
+const greatVibes = Great_Vibes({
+  weight: '400',
+  subsets: ['latin'],
+  variable: '--font-great-vibes',
+});
+
+const dancingScript = Dancing_Script({
+  subsets: ['latin'],
+  variable: '--font-dancing-script',
 });
 
 // Viewport configuration
@@ -23,15 +40,15 @@ export const viewport: Viewport = {
 // Enhanced SEO metadata
 export const metadata: Metadata = {
   title: {
-    default: 'Schriftgenerator – 50+ Schriftarten für Instagram, WhatsApp & TikTok',
+    default: 'Kostenloser Schriftgenerator – Texte sofort ändern',
     template: '%s | Schriftgenerator',
   },
-  description: 'Kostenloser Schriftgenerator: Wandle deinen Text sofort in 50+ stylische Schriftarten um. Perfekt für Instagram Bio, WhatsApp Status, TikTok Namen. Keine Installation, 100% kostenlos!',
+  description: 'Erstelle sofort stilisierte, ausgefallene und coole Styles mit über 200 Unicode-Schriftarten. Perfekt für Instagram Bio, WhatsApp Status, TikTok Namen. Keine Installation, 100% kostenlos!',
   keywords: [
-    'Schriftgenerator',
-    'Instagram Schriftgenerator',
-    'WhatsApp Schriftgenerator', 
-    'TikTok Schriftgenerator',
+    'SchriftenPro',
+    'Instagram Schrifttyp',
+    'WhatsApp Schriften',
+    'TikTok Schriften',
     'Schrift umwandeln',
     'Text in Schrift umwandeln',
     'Unicode Schriftarten',
@@ -43,15 +60,15 @@ export const metadata: Metadata = {
     'Coole Schriftarten',
     'Text Generator',
   ],
-  authors: [{ name: 'Schriftgenerator' }],
-  creator: 'Schriftgenerator',
-  publisher: 'Schriftgenerator',
+  authors: [{ name: 'SchriftenPro' }],
+  creator: 'SchriftenPro',
+  publisher: 'SchriftenPro',
   formatDetection: {
     email: false,
     address: false,
     telephone: false,
   },
-  metadataBase: new URL('https://schriftgenerator.de'),
+  metadataBase: new URL('https://schriftenpro.de'),
   alternates: {
     canonical: '/',
     languages: {
@@ -59,10 +76,10 @@ export const metadata: Metadata = {
     },
   },
   openGraph: {
-    title: 'Schriftgenerator – 50+ Schriftarten kostenlos',
+    title: 'Kostenloser Schriftgenerator – 200+ Schriftarten kostenlos',
     description: 'Wandle deinen Text in stylische Schriftarten um. Perfekt für Instagram, WhatsApp, TikTok. Kostenlos & sofort nutzbar!',
-    url: 'https://schriftgenerator.de',
-    siteName: 'Schriftgenerator',
+    url: 'https://schriftenpro.de',
+    siteName: 'SchriftenPro',
     locale: 'de_DE',
     type: 'website',
     images: [
@@ -70,13 +87,13 @@ export const metadata: Metadata = {
         url: '/og-image.png',
         width: 1200,
         height: 630,
-        alt: 'Schriftgenerator - Texte in stylische Schriftarten umwandeln',
+        alt: 'SchriftenPro - Texte in stylische Schriftarten umwandeln',
       },
     ],
   },
   twitter: {
     card: 'summary_large_image',
-    title: 'Schriftgenerator – 50+ Schriftarten kostenlos',
+    title: 'Kostenloser Schriftgenerator – 200+ Schriftarten kostenlos',
     description: 'Wandle deinen Text in stylische Schriftarten um. Kostenlos!',
     images: ['/og-image.png'],
   },
@@ -100,12 +117,12 @@ export default function RootLayout({
   children: React.ReactNode;
 }) {
   return (
-    <html lang="de" className={inter.variable}>
+    <html lang="de" className={`${inter.variable} ${pacifico.variable} ${greatVibes.variable} ${dancingScript.variable}`}>
       <head>
         {/* Preconnect to external resources */}
         <link rel="preconnect" href="https://fonts.googleapis.com" />
         <link rel="preconnect" href="https://fonts.gstatic.com" crossOrigin="anonymous" />
-        
+
         {/* Favicon */}
         <link rel="icon" href="/favicon.ico" sizes="any" />
         <link rel="icon" href="/icon.svg" type="image/svg+xml" />
@@ -120,7 +137,7 @@ export default function RootLayout({
               '@context': 'https://schema.org',
               '@type': 'WebApplication',
               name: 'Schriftgenerator',
-              description: 'Kostenloser Online-Schriftgenerator für Instagram, WhatsApp und TikTok. Über 50 Unicode-Schriftarten verfügbar.',
+              description: 'Kostenlose Online-Schriften für Instagram, WhatsApp und TikTok. Über 200 Unicode-Schriftarten verfügbar.',
               url: 'https://schriftgenerator.de',
               applicationCategory: 'UtilityApplication',
               operatingSystem: 'Web Browser',
@@ -179,7 +196,7 @@ export default function RootLayout({
                   name: 'Muss ich eine App installieren?',
                   acceptedAnswer: {
                     '@type': 'Answer',
-                    text: 'Nein, der Schriftgenerator funktioniert direkt im Browser — auf dem Handy und am Computer. Einfach diese Seite öffnen, Text eingeben und los gehts.',
+                    text: 'Nein, unser Schriftgenerator funktioniert direkt im Browser — auf dem Handy und am Computer. Einfach diese Seite öffnen, Text eingeben und los gehts.',
                   },
                 },
                 {

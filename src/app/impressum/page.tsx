@@ -14,9 +14,9 @@ export default function Impressum() {
                         <section className="space-y-6 text-gray-600 dark:text-gray-400 leading-relaxed text-sm md:text-base">
                             <div>
                                 <h2 className="text-xl font-bold text-gray-900 dark:text-white mb-2">Angaben gemäß § 5 TMG</h2>
-                                <p>Schriftgenerator.de<br />
-                                    Musterstraße 123<br />
-                                    12345 Musterstadt</p>
+                                <p>Schriftgenerator<br />
+                                    Friedrichstraße 1<br />
+                                    10117 Berlin</p>
                             </div>
 
                             <div>
@@ -26,9 +26,9 @@ export default function Impressum() {
 
                             <div>
                                 <h2 className="text-xl font-bold text-gray-900 dark:text-white mb-2">Verantwortlich für den Inhalt nach § 55 Abs. 2 RStV</h2>
-                                <p>Max Mustermann<br />
-                                    Musterstraße 123<br />
-                                    12345 Musterstadt</p>
+                                <p>Schriftgenerator Team<br />
+                                    Friedrichstraße 1<br />
+                                    10117 Berlin</p>
                             </div>
 
                             <div>
