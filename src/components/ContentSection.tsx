@@ -169,10 +169,10 @@ const ContentSection: React.FC = () => {
                                 { title: "Ein-Klick Kopieren", desc: "Kopieren und fügen Sie Texte mühelos mit nur einem Klick in das gewünschte Feld ein." }
                             ].map((item, idx) => (
                                 <div key={idx} className="p-6 md:p-8 bg-white/50 dark:bg-slate-900/50 rounded-2xl md:rounded-[2rem] border border-slate-200/30 dark:border-slate-800/30 hover:border-emerald-500/30 transition-all duration-500 hover:glow-shadow-emerald group">
-                                    <h4 className="text-base md:text-lg font-black text-slate-900 dark:text-white mb-2 flex items-center gap-2">
+                                    <h3 className="text-base md:text-lg font-black text-slate-900 dark:text-white mb-2 flex items-center gap-2">
                                         <span className="w-1.5 h-1.5 bg-emerald-500 rounded-full group-hover:scale-150 transition-transform" />
                                         {item.title}
-                                    </h4>
+                                    </h3>
                                     <p className="text-xs md:text-sm text-slate-500 dark:text-slate-400 leading-relaxed">
                                         {item.desc}
                                     </p>
@@ -203,7 +203,7 @@ const ContentSection: React.FC = () => {
                             { name: "PUBG", desc: "Benutzername und Bio." }
                         ].map((platform, i) => (
                             <div key={i} className="group p-5 md:p-6 glass-premium rounded-2xl md:rounded-3xl border border-slate-200/50 dark:border-slate-800/50 hover:border-emerald-500/40 transition-all duration-500 hover:scale-[1.02]">
-                                <h4 className="font-bold text-sm md:text-base text-slate-900 dark:text-white mb-1 group-hover:text-emerald-500 transition-colors">{platform.name}</h4>
+                                <h3 className="font-bold text-sm md:text-base text-slate-900 dark:text-white mb-1 group-hover:text-emerald-500 transition-colors">{platform.name}</h3>
                                 <p className="text-[10px] md:text-xs text-slate-500 dark:text-slate-500 leading-snug">{platform.desc}</p>
                             </div>
                         ))}
