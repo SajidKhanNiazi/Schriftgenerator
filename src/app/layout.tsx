@@ -2,28 +2,38 @@ import type { Metadata, Viewport } from 'next';
 import { Inter, Pacifico, Great_Vibes, Dancing_Script } from 'next/font/google';
 import '../styles/globals.css';
 
-// Load Inter font with optimized settings
+// Configure Inter with system font fallbacks
 const inter = Inter({
   subsets: ['latin'],
   display: 'swap',
   variable: '--font-inter',
+  fallback: ['system-ui', '-apple-system', 'BlinkMacSystemFont', 'Segoe UI', 'Roboto', 'Helvetica Neue', 'Arial', 'sans-serif'],
 });
 
+// Configure Pacifico with cursive fallbacks
 const pacifico = Pacifico({
   weight: '400',
   subsets: ['latin'],
+  display: 'swap',
   variable: '--font-pacifico',
+  fallback: ['cursive', 'Comic Sans MS', 'Apple Chancery', 'Bradley Hand', 'sans-serif'],
 });
 
+// Configure Great Vibes with elegant script fallbacks
 const greatVibes = Great_Vibes({
   weight: '400',
   subsets: ['latin'],
+  display: 'swap',
   variable: '--font-great-vibes',
+  fallback: ['cursive', 'Brush Script MT', 'Lucida Handwriting', 'Apple Chancery', 'sans-serif'],
 });
 
+// Configure Dancing Script with handwriting fallbacks
 const dancingScript = Dancing_Script({
   subsets: ['latin'],
+  display: 'swap',
   variable: '--font-dancing-script',
+  fallback: ['cursive', 'Bradley Hand', 'Brush Script MT', 'Lucida Handwriting', 'sans-serif'],
 });
 
 // Viewport configuration
