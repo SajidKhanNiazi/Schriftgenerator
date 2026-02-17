@@ -59,11 +59,60 @@ export default function Header() {
 
           {/* Mobile Navigation */}
           {isMounted && isMenuOpen && (
-            <div className="md:hidden pt-2 pb-6 animate-fade-in">
-              <div className="flex flex-col gap-4 border-t border-slate-100 dark:border-slate-800 pt-4">
-                <Link href="/instagram-schrift" className="text-xs font-bold text-slate-600 dark:text-slate-400" onClick={() => setIsMenuOpen(false)}>Instagram Schrift</Link>
-                <Link href="/impressum" className="text-xs font-bold text-slate-600 dark:text-slate-400" onClick={() => setIsMenuOpen(false)}>Impressum</Link>
-                <Link href="/datenschutz" className="text-xs font-bold text-slate-600 dark:text-slate-400" onClick={() => setIsMenuOpen(false)}>Datenschutz</Link>
+            <div className="md:hidden pt-3 pb-5 border-t border-slate-200 dark:border-slate-700 bg-white dark:bg-slate-900 animate-fade-in">
+              <div className="flex flex-col gap-1 px-2">
+                <Link
+                  href="/"
+                  className="group flex items-center gap-3 px-4 py-3.5 text-sm font-semibold text-slate-700 dark:text-slate-200 hover:bg-emerald-50 dark:hover:bg-emerald-500/10 hover:text-emerald-600 dark:hover:text-emerald-400 rounded-xl transition-all [-webkit-tap-highlight-color:transparent]"
+                  onClick={() => setIsMenuOpen(false)}
+                >
+                  <svg className="w-4 h-4 text-slate-400 group-hover:text-emerald-500 transition-colors" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M3 12l2-2m0 0l7-7 7 7M5 10v10a1 1 0 001 1h3m10-11l2 2m-2-2v10a1 1 0 01-1 1h-3m-6 0a1 1 0 001-1v-4a1 1 0 011-1h2a1 1 0 011 1v4a1 1 0 001 1m-6 0h6" />
+                  </svg>
+                  <span>Startseite</span>
+                </Link>
+
+                <Link
+                  href="/instagram-schrift"
+                  className="group flex items-center gap-3 px-4 py-3.5 text-sm font-semibold text-slate-700 dark:text-slate-200 hover:bg-emerald-50 dark:hover:bg-emerald-500/10 hover:text-emerald-600 dark:hover:text-emerald-400 rounded-xl transition-all [-webkit-tap-highlight-color:transparent]"
+                  onClick={() => setIsMenuOpen(false)}
+                >
+                  <svg className="w-4 h-4 text-slate-400 group-hover:text-emerald-500 transition-colors" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M7 8h10M7 12h4m1 8l-4-4H5a2 2 0 01-2-2V6a2 2 0 012-2h14a2 2 0 012 2v8a2 2 0 01-2 2h-3l-4 4z" />
+                  </svg>
+                  <span>Instagram Schrift</span>
+                </Link>
+
+                <div className="h-px bg-slate-100 dark:bg-slate-800 my-2 mx-4" />
+
+                <Link
+                  href="/impressum"
+                  className="group flex items-center gap-3 px-4 py-3.5 text-sm font-semibold text-slate-700 dark:text-slate-200 hover:bg-emerald-50 dark:hover:bg-emerald-500/10 hover:text-emerald-600 dark:hover:text-emerald-400 rounded-xl transition-all [-webkit-tap-highlight-color:transparent]"
+                  onClick={() => setIsMenuOpen(false)}
+                >
+                  <svg className="w-4 h-4 text-slate-400 group-hover:text-emerald-500 transition-colors" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M13 16h-1v-4h-1m1-4h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z" />
+                  </svg>
+                  <span>Impressum</span>
+                </Link>
+
+                <Link
+                  href="/datenschutz"
+                  className="group flex items-center gap-3 px-4 py-3.5 text-sm font-semibold text-slate-700 dark:text-slate-200 hover:bg-emerald-50 dark:hover:bg-emerald-500/10 hover:text-emerald-600 dark:hover:text-emerald-400 rounded-xl transition-all [-webkit-tap-highlight-color:transparent]"
+                  onClick={() => setIsMenuOpen(false)}
+                >
+                  <svg className="w-4 h-4 text-slate-400 group-hover:text-emerald-500 transition-colors" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M12 15v2m-6 4h12a2 2 0 002-2v-6a2 2 0 00-2-2H6a2 2 0 00-2 2v6a2 2 0 002 2zm10-10V7a4 4 0 00-8 0v4h8z" />
+                  </svg>
+                  <span>Datenschutz</span>
+                </Link>
+
+                <div className="mt-3 mx-4 p-3 bg-emerald-50 dark:bg-emerald-500/10 rounded-xl border border-emerald-100 dark:border-emerald-500/20">
+                  <div className="flex items-center gap-2">
+                    <span className="w-1.5 h-1.5 rounded-full bg-emerald-500 animate-pulse" />
+                    <span className="text-xs font-bold text-emerald-600 dark:text-emerald-400">100% Kostenlos</span>
+                  </div>
+                </div>
               </div>
             </div>
           )}
