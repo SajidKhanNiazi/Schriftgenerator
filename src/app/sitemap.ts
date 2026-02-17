@@ -12,12 +12,6 @@ export default function sitemap(): MetadataRoute.Sitemap {
             priority: 1,
         },
         {
-            url: `${baseUrl}/instagram-schrift`,
-            lastModified,
-            changeFrequency: 'weekly',
-            priority: 0.8,
-        },
-        {
             url: `${baseUrl}/ueber-uns`,
             lastModified,
             changeFrequency: 'monthly',

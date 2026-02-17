@@ -29,7 +29,6 @@ export default function Footer() {
             <h4 className="text-white font-bold mb-6">Navigation</h4>
             <ul className="space-y-3 text-gray-400 text-sm">
               <li><Link href="/" className="hover:text-emerald-400 transition-colors">Startseite</Link></li>
-              <li><Link href="/instagram-schrift" className="hover:text-emerald-400 transition-colors">Instagram Schrift</Link></li>
               <li><Link href="/ueber-uns" className="hover:text-emerald-400 transition-colors">Über uns</Link></li>
               <li><Link href="/kontakt" className="hover:text-emerald-400 transition-colors">Kontakt</Link></li>
             </ul>

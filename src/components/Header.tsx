@@ -29,10 +29,6 @@ export default function Header() {
             {/* Links & Badge */}
             <div className="flex items-center gap-4 md:gap-8">
               <div className="hidden md:flex items-center gap-6 text-[10px] font-black uppercase tracking-widest text-slate-500 dark:text-slate-400">
-                <Link href="/instagram-schrift" className="hover:text-emerald-500 transition-colors relative group/link">
-                  Instagram
-                  <span className="absolute -bottom-1 left-0 w-0 h-0.5 bg-emerald-500 transition-all group-hover/link:w-full" />
-                </Link>
                 <Link href="/impressum" className="hover:text-emerald-500 transition-colors relative group/link">
                   Impressum
                   <span className="absolute -bottom-1 left-0 w-0 h-0.5 bg-emerald-500 transition-all group-hover/link:w-full" />
@@ -72,16 +68,6 @@ export default function Header() {
                   <span>Startseite</span>
                 </Link>
 
-                <Link
-                  href="/instagram-schrift"
-                  className="group flex items-center gap-3 px-4 py-3.5 text-sm font-semibold text-slate-700 dark:text-slate-200 hover:bg-emerald-50 dark:hover:bg-emerald-500/10 hover:text-emerald-600 dark:hover:text-emerald-400 rounded-xl transition-all [-webkit-tap-highlight-color:transparent]"
-                  onClick={() => setIsMenuOpen(false)}
-                >
-                  <svg className="w-4 h-4 text-slate-400 group-hover:text-emerald-500 transition-colors" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M7 8h10M7 12h4m1 8l-4-4H5a2 2 0 01-2-2V6a2 2 0 012-2h14a2 2 0 012 2v8a2 2 0 01-2 2h-3l-4 4z" />
-                  </svg>
-                  <span>Instagram Schrift</span>
-                </Link>
 
                 <div className="h-px bg-slate-100 dark:bg-slate-800 my-2 mx-4" />
 

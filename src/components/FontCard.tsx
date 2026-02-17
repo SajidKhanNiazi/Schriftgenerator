@@ -31,7 +31,7 @@ export default function FontCard({ generatedText, size, onCopy }: FontCardProps)
     <button
       type="button"
       onClick={handleCopy}
-      className={`group relative w-full text-left bg-white dark:bg-slate-900 rounded-3xl border border-slate-200/60 dark:border-slate-800/60 p-4 md:p-6 transition-all duration-500 cursor-pointer hover:border-emerald-500/40 hover:glow-shadow-emerald active:scale-[0.98] overflow-hidden focus:outline-none focus:ring-2 focus:ring-emerald-500/20 ${copied ? 'ring-2 ring-emerald-500/50' : ''}`}
+      className={`group relative w-full text-left bg-white dark:bg-slate-900 rounded-3xl border border-slate-200/60 dark:border-slate-800/60 px-6 py-5 md:p-6 transition-all duration-500 cursor-pointer hover:border-emerald-500/40 hover:glow-shadow-emerald active:scale-[0.98] overflow-hidden focus:outline-none focus:ring-2 focus:ring-emerald-500/20 ${copied ? 'ring-2 ring-emerald-500/50' : ''}`}
     >
       {/* Subtle Gradient Overlay */}
       <div className="absolute inset-0 bg-gradient-to-br from-emerald-500/[0.02] to-teal-500/[0.02] opacity-0 group-hover:opacity-100 transition-opacity duration-700" />

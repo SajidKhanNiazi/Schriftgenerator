@@ -136,7 +136,7 @@ export default function Home() {
                           <h3 className="text-lg font-bold text-slate-800 dark:text-slate-200 mb-3">
                             {subCat.title}
                           </h3>
-                          <div className="grid grid-cols-2 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-3 sm:gap-4 md:gap-4">
+                          <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-3 sm:gap-4 md:gap-4">
                             {subCat.items.map((font) => (
                               <FontCard
                                 key={font.id}
@@ -153,7 +153,7 @@ export default function Home() {
                     </div>
                   ) : (
                     /* Render regular items if no sub-categories */
-                    <div className="grid grid-cols-2 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-3 sm:gap-4 md:gap-4 max-w-7xl mx-auto">
+                    <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-3 sm:gap-4 md:gap-4 max-w-7xl mx-auto">
                       {section.items.map((font) => (
                         <FontCard
                           key={font.id}
