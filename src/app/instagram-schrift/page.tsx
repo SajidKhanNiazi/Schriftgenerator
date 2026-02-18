@@ -45,7 +45,7 @@ export default function InstagramSchriftPage() {
                             '@type': 'WebApplication',
                             name: 'Instagram Schrift Generator',
                             description: 'Kostenloser Instagram Schrift Generator für stylische Bios, Namen und Captions',
-                            url: 'https://fontgenerator.io/instagram-schrift',
+                            url: 'https://schriftenpro.de/instagram-schrift',
                             applicationCategory: 'UtilityApplication',
                             operatingSystem: 'Any',
                             offers: {

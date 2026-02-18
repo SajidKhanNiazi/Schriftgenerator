@@ -21,7 +21,7 @@ export default function Impressum() {
 
                             <div>
                                 <h2 className="text-xl font-bold text-gray-900 dark:text-white mb-2">Kontakt</h2>
-                                <p>E-Mail: kontakt@schriftgenerator.de</p>
+                                <p>E-Mail: kontakt@schriftenpro.de</p>
                             </div>
 
                             <div>

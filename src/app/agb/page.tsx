@@ -20,7 +20,7 @@ export default function AGB() {
                         <section className="space-y-6 text-gray-600 dark:text-gray-400 leading-relaxed text-sm md:text-base">
                             <div>
                                 <h2 className="text-xl font-bold text-gray-900 dark:text-white mb-2">1. Geltungsbereich</h2>
-                                <p>Für die Nutzung dieses kostenlosen Online-Tools (Schriftgenerator.de) gelten die nachfolgenden Bedingungen. Durch den Zugriff auf die Website erklären Sie sich mit diesen Bedingungen einverstanden.</p>
+                                <p>Für die Nutzung dieses kostenlosen Online-Tools (SchriftenPro.de) gelten die nachfolgenden Bedingungen. Durch den Zugriff auf die Website erklären Sie sich mit diesen Bedingungen einverstanden.</p>
                             </div>
 
                             <div>
