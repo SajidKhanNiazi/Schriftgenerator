@@ -12,7 +12,7 @@ export default function Header() {
   }, []);
 
   return (
-    <header className="fixed top-4 left-0 right-0 z-50 flex justify-center px-4">
+    <header id="main-header" className="fixed top-4 left-0 right-0 z-50 flex justify-center px-4">
       <nav className="w-full max-w-5xl glass-premium rounded-full border border-slate-200/50 dark:border-slate-800/50 shadow-xl shadow-slate-200/20 dark:shadow-slate-900/40 transition-all duration-300">
         <div className="container mx-auto px-6 max-w-7xl">
           <div className="flex justify-between items-center h-14 md:h-16">
