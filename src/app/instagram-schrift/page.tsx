@@ -4,23 +4,23 @@ import Header from '@/components/Header';
 import Footer from '@/components/Footer';
 
 export const metadata: Metadata = {
-    title: 'Instagram Schrift Generator | Coole Instagram Bio Schrift kopieren',
-    description: 'Erstelle stylische Instagram Schriften für Bio, Name und Captions. Einfach kopieren und bei Instagram einfügen. Kostenlos & ohne Anmeldung.',
+    title: 'Instagram Schriftgenerator | Coole Schriftarten für Bio & Name kopieren',
+    description: 'Erstelle stylische Instagram-Schriftarten für Bio, Name und Bildunterschriften. Einfach kopieren und einfügen. Kostenlos & ohne Anmeldung.',
     keywords: [
         'Instagram Schrift',
         'Instagram Bio Schrift',
         'coole Instagram Schrift',
         'Instagram Schrift kopieren',
         'Instagram Schriftarten',
-        'Instagram Font Generator',
+        'Instagram Schriftgenerator',
         'Instagram Name Schrift',
         'Instagram Caption Schrift',
         'ästhetische Instagram Schrift',
         'Instagram Story Schrift'
     ],
     openGraph: {
-        title: 'Instagram Schrift Generator | Coole Schriften für Bio & Name',
-        description: 'Erstelle stylische Instagram Schriften für Bio, Name und Captions. Kostenlos & einfach zu nutzen.',
+        title: 'Instagram Schriftgenerator | Coole Schriftarten für Bio & Name',
+        description: 'Erstelle stylische Instagram-Schriftarten für Bio, Name und Bildunterschriften. Kostenlos & einfach zu nutzen.',
         type: 'website',
         locale: 'de_DE',
     },

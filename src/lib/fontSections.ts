@@ -13,7 +13,8 @@ export const fontSections: FontSection[] = [
         subCategories: [
             {
                 id: 'instagram',
-                title: 'Instagram Schrift',
+                title: 'Instagram font',
+                href: '/instagram-schrift',
                 items: [
                     { id: 'bold-sans', name: 'Bold Sans-Serif', generator: getGen('bold-sans') },
                     { id: 'italic-serif', name: 'Italic Serif', generator: getGen('italic-serif') },
@@ -38,7 +39,8 @@ export const fontSections: FontSection[] = [
             },
             {
                 id: 'tiktok',
-                title: 'TikTok Schrift',
+                title: 'TikTok font',
+                href: '/tiktok-schriftarten',
                 items: [
                     { id: 'bold-italic', name: 'Bold Italic', generator: getGen('bold-italic') },
                     { id: 'fancy', name: 'Fancy', generator: getGen('fancy') },

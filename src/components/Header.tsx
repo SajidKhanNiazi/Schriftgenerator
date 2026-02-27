@@ -29,8 +29,16 @@ export default function Header() {
             {/* Links & Badge */}
             <div className="flex items-center gap-4 md:gap-8">
               <div className="hidden md:flex items-center gap-6 text-[10px] font-black uppercase tracking-widest text-slate-500 dark:text-slate-400">
-                <Link href="/impressum" className="hover:text-emerald-500 transition-colors relative group/link">
-                  Impressum
+                <Link href="/instagram-schrift" className="hover:text-emerald-500 transition-colors relative group/link">
+                  Instagram Schrift
+                  <span className="absolute -bottom-1 left-0 w-0 h-0.5 bg-emerald-500 transition-all group-hover/link:w-full" />
+                </Link>
+                <Link href="/tiktok-schriftarten" className="hover:text-emerald-500 transition-colors relative group/link">
+                  TikTok Schrift
+                  <span className="absolute -bottom-1 left-0 w-0 h-0.5 bg-emerald-500 transition-all group-hover/link:w-full" />
+                </Link>
+                <Link href="/ueber-uns" className="hover:text-emerald-500 transition-colors relative group/link">
+                  Über uns
                   <span className="absolute -bottom-1 left-0 w-0 h-0.5 bg-emerald-500 transition-all group-hover/link:w-full" />
                 </Link>
               </div>
@@ -44,7 +52,7 @@ export default function Header() {
               <button
                 className="md:hidden p-2 text-slate-600 dark:text-slate-400"
                 onClick={() => setIsMenuOpen(!isMenuOpen)}
-                aria-label="Menü öffnen"
+                aria-label="Open menu"
               >
                 <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                   <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2.5} d={isMenuOpen ? "M6 18L18 6M6 6l12 12" : "M4 6h16M4 12h16M4 18h16"} />
@@ -68,6 +76,28 @@ export default function Header() {
                   <span>Startseite</span>
                 </Link>
 
+                <Link
+                  href="/instagram-schrift"
+                  className="group flex items-center gap-3 px-4 py-3.5 text-sm font-semibold text-slate-700 dark:text-slate-200 hover:bg-emerald-50 dark:hover:bg-emerald-500/10 hover:text-emerald-600 dark:hover:text-emerald-400 rounded-xl transition-all [-webkit-tap-highlight-color:transparent]"
+                  onClick={() => setIsMenuOpen(false)}
+                >
+                  <svg className="w-4 h-4 text-slate-400 group-hover:text-emerald-500 transition-colors" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M14.828 14.828a4 4 0 01-5.656 0M9 10h.01M15 10h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z" />
+                  </svg>
+                  <span>Instagram Schrift</span>
+                </Link>
+
+                <Link
+                  href="/tiktok-schriftarten"
+                  className="group flex items-center gap-3 px-4 py-3.5 text-sm font-semibold text-slate-700 dark:text-slate-200 hover:bg-emerald-50 dark:hover:bg-emerald-500/10 hover:text-emerald-600 dark:hover:text-emerald-400 rounded-xl transition-all [-webkit-tap-highlight-color:transparent]"
+                  onClick={() => setIsMenuOpen(false)}
+                >
+                  <svg className="w-4 h-4 text-slate-400 group-hover:text-emerald-500 transition-colors" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M15 10l4.553-2.276A1 1 0 0121 8.618v6.764a1 1 0 01-1.447.894L15 14M5 18h8a2 2 0 002-2V8a2 2 0 00-2-2H5a2 2 0 00-2 2v8a2 2 0 002 2z" />
+                  </svg>
+                  <span>TikTok Schrift</span>
+                </Link>
+
 
                 <div className="h-px bg-slate-100 dark:bg-slate-800 my-2 mx-4" />
 
@@ -79,7 +109,7 @@ export default function Header() {
                   <svg className="w-4 h-4 text-slate-400 group-hover:text-emerald-500 transition-colors" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                     <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M13 16h-1v-4h-1m1-4h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z" />
                   </svg>
-                  <span>Impressum</span>
+                  <span>Über uns</span>
                 </Link>
 
                 <Link
@@ -93,7 +123,7 @@ export default function Header() {
                   <span>Datenschutz</span>
                 </Link>
 
-                <div className="mt-3 mx-4 p-3 bg-emerald-50 dark:bg-emerald-500/10 rounded-xl border border-emerald-100 dark:border-emerald-500/20">
+                <div className="mt-3 mx-4 p-3 mb-8 bg-emerald-50 dark:bg-emerald-500/10 rounded-xl border border-emerald-100 dark:border-emerald-500/20">
                   <div className="flex items-center gap-2">
                     <span className="w-1.5 h-1.5 rounded-full bg-emerald-500 animate-pulse" />
                     <span className="text-xs font-bold text-emerald-600 dark:text-emerald-400">100% Kostenlos</span>

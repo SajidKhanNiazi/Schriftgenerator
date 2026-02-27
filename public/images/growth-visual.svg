@@ -1,0 +1,42 @@
+<svg width="800" height="400" viewBox="0 0 800 400" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <rect width="800" height="400" rx="40" fill="#020617"/>
+  <defs>
+    <linearGradient id="paint0_linear" x1="0" y1="0" x2="800" y2="400" gradientUnits="userSpaceOnUse">
+      <stop stop-color="#10b981" stop-opacity="0.1"/>
+      <stop offset="1" stop-color="#0ea5e9" stop-opacity="0.05"/>
+    </linearGradient>
+  </defs>
+  <rect width="800" height="400" rx="40" fill="url(#paint0_linear)"/>
+  
+  <!-- Profile Card Mockup -->
+  <rect x="100" y="80" width="300" height="240" rx="24" fill="#0f172a" stroke="#1e293b" stroke-width="2"/>
+  <circle cx="160" cy="140" r="30" fill="#1e293b"/>
+  <path d="M160 130C165.523 130 170 134.477 170 140C170 145.523 165.523 150 160 150C154.477 150 150 145.523 150 140C150 134.477 154.477 130 160 130Z" fill="#10b981"/>
+  <rect x="210" y="125" width="120" height="12" rx="6" fill="#1e293b"/>
+  <rect x="210" y="145" width="60" height="8" rx="4" fill="#334155"/>
+  
+  <line x1="130" y1="200" x2="370" y2="200" stroke="#1e293b" stroke-width="1"/>
+  
+  <text x="130" y="240" font-family="Arial" font-size="20" font-weight="900" fill="#f8fafc">1.2K</text>
+  <text x="130" y="260" font-family="Arial" font-size="10" font-weight="bold" fill="#64748b" letter-spacing="1">FOLLOWERS</text>
+  
+  <text x="210" y="240" font-family="Arial" font-size="20" font-weight="900" fill="#f8fafc">482</text>
+  <text x="210" y="260" font-family="Arial" font-size="10" font-weight="bold" fill="#64748b" letter-spacing="1">POSTS</text>
+  
+  <text x="290" y="240" font-family="Arial" font-size="20" font-weight="900" fill="#f8fafc">842</text>
+  <text x="290" y="260" font-family="Arial" font-size="10" font-weight="bold" fill="#64748b" letter-spacing="1">FOLLOWING</text>
+  
+  <!-- Floating Labels -->
+  <rect x="450" y="120" width="180" height="40" rx="12" fill="#10b981" fill-opacity="0.1" stroke="#10b981" stroke-width="1" stroke-opacity="0.2"/>
+  <text x="470" y="146" font-family="Arial" font-size="18" font-style="italic" fill="#10b981">Stylish Bio ✨</text>
+  
+  <rect x="480" y="180" width="160" height="40" rx="12" fill="#0ea5e9" fill-opacity="0.1" stroke="#0ea5e9" stroke-width="1" stroke-opacity="0.2"/>
+  <text x="500" y="206" font-family="Arial" font-size="16" font-weight="900" fill="#0ea5e9">BOLD STYLE</text>
+  
+  <rect x="440" y="240" width="170" height="40" rx="12" fill="#64748b" fill-opacity="0.1" stroke="#64748b" stroke-width="1" stroke-opacity="0.2"/>
+  <text x="460" y="266" font-family="Arial" font-size="16" fill="#94a3b8">Cool Fonts</text>
+  
+  <!-- Growth Indicator -->
+  <circle cx="370" cy="220" r="15" fill="#10b981"/>
+  <path d="M370 212L374 220H366L370 212Z" fill="white"/>
+</svg>

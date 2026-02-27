@@ -14,7 +14,7 @@ export default function Footer() {
               </div>
             </div>
             <p className="text-gray-400 leading-relaxed max-w-sm mb-6">
-              Der ultimative Generator für Ihre Texte. Verwandeln Sie Ihren Text sofort online in mehr als 100 stylische Unicode-Schriften.
+              Der ultimative Generator für deine Texte. Wandle deinen Text sofort in über 100 stylische Unicode-Schriftarten um – kostenlos.
             </p>
             <div className="flex gap-4">
               <div className="w-10 h-10 rounded-full bg-gray-800 flex items-center justify-center hover:bg-emerald-600 transition-colors cursor-pointer">
@@ -29,6 +29,7 @@ export default function Footer() {
             <h4 className="text-white font-bold mb-6">Navigation</h4>
             <ul className="space-y-3 text-gray-400 text-sm">
               <li><Link href="/" className="hover:text-emerald-400 transition-colors">Startseite</Link></li>
+              <li><Link href="/instagram-schrift" className="hover:text-emerald-400 transition-colors">Instagram Schrift</Link></li>
               <li><Link href="/ueber-uns" className="hover:text-emerald-400 transition-colors">Über uns</Link></li>
               <li><Link href="/kontakt" className="hover:text-emerald-400 transition-colors">Kontakt</Link></li>
             </ul>
@@ -37,7 +38,7 @@ export default function Footer() {
             <h4 className="text-white font-bold mb-6">Rechtliches</h4>
             <ul className="space-y-3 text-gray-400 text-sm">
               <li><Link href="/impressum" className="hover:text-emerald-400 transition-colors">Impressum</Link></li>
-              <li><Link href="/datenschutz" className="hover:text-emerald-400 transition-colors">Datenschutz</Link></li>
+              <li><Link href="/datenschutz" className="hover:text-emerald-400 transition-colors">Datenschutzerklärung</Link></li>
               <li><Link href="/agb" className="hover:text-emerald-400 transition-colors">AGB</Link></li>
               <li><Link href="/haftungsausschluss" className="hover:text-emerald-400 transition-colors">Haftungsausschluss</Link></li>
             </ul>
@@ -46,7 +47,7 @@ export default function Footer() {
         <div className="pt-8 border-t border-gray-800 flex flex-col md:flex-row justify-between items-center gap-4 text-gray-500 text-xs">
           <p>© {new Date().getFullYear()} Schriftgenerator. Alle Rechte vorbehalten.</p>
           <div className="flex gap-6">
-            <span>Hergestellt mit ❤️ für Social Media</span>
+            <span>Mit ❤️ für Social Media</span>
             <span>V 2.1.0</span>
           </div>
         </div>

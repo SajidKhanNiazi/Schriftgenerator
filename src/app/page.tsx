@@ -1,6 +1,7 @@
 'use client';
 
 import { useState, useEffect } from 'react';
+import Link from 'next/link';
 import Header from '@/components/Header';
 import Footer from '@/components/Footer';
 import FontCard from '@/components/FontCard';
@@ -54,10 +55,10 @@ export default function Home() {
 
           <div className="container mx-auto px-4 md:px-5 text-center">
             <h1 className="text-3xl md:text-5xl font-extrabold text-slate-900 dark:text-white mb-3 leading-tight">
-              Kostenloser Schriftgenerator – <span className="text-emerald-600 dark:text-emerald-400">Texte sofort</span> in schöne Schriftarten ändern
+              Schriftgenerator – <span className="text-emerald-600 dark:text-emerald-400">Texte online umwandeln</span> sofort
             </h1>
             <p className="text-slate-600 dark:text-slate-400 max-w-lg mx-auto mb-6 text-sm md:text-base animate-fade-in">
-              Erstelle sofort stilisierte, ausgefallene und coole Styles mit über 200 Unicode-Schriftarten
+              Erstelle sofort stilvolle, ausgefallene und coole Schriftarten mit über 200 Unicode-Schriften
             </p>
 
             <div className="max-w-2xl mx-auto relative">
@@ -98,7 +99,13 @@ export default function Home() {
                   <div className="max-w-7xl mx-auto mb-4 pb-1">
                     <h2 className="text-xl md:text-3xl font-bold text-gray-900 dark:text-white flex items-center justify-center md:justify-start gap-3">
                       <span className="w-1 h-6 md:h-8 bg-emerald-500 rounded-full" />
-                      {section.title}
+                      {section.href ? (
+                        <Link href={section.href} className="hover:text-emerald-500 transition-colors">
+                          {section.title}
+                        </Link>
+                      ) : (
+                        section.title
+                      )}
                     </h2>
                   </div>
 
@@ -134,7 +141,13 @@ export default function Home() {
                       {section.subCategories.map((subCat) => (
                         <div key={subCat.id} id={`${section.id}-${subCat.id}`} className="mb-6">
                           <h3 className="text-lg font-bold text-slate-800 dark:text-slate-200 mb-3">
-                            {subCat.title}
+                            {subCat.href ? (
+                              <Link href={subCat.href} className="hover:text-emerald-500 transition-colors">
+                                {subCat.title}
+                              </Link>
+                            ) : (
+                              subCat.title
+                            )}
                           </h3>
                           <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-3 sm:gap-4 md:gap-4">
                             {subCat.items.map((font) => (
