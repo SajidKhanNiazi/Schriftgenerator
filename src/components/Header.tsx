@@ -37,6 +37,10 @@ export default function Header() {
                   TikTok Schrift
                   <span className="absolute -bottom-1 left-0 w-0 h-0.5 bg-emerald-500 transition-all group-hover/link:w-full" />
                 </Link>
+                <Link href="/whatsapp-schrift" className="hover:text-emerald-500 transition-colors relative group/link">
+                  WhatsApp Schrift
+                  <span className="absolute -bottom-1 left-0 w-0 h-0.5 bg-emerald-500 transition-all group-hover/link:w-full" />
+                </Link>
                 <Link href="/ueber-uns" className="hover:text-emerald-500 transition-colors relative group/link">
                   Über uns
                   <span className="absolute -bottom-1 left-0 w-0 h-0.5 bg-emerald-500 transition-all group-hover/link:w-full" />
@@ -96,6 +100,17 @@ export default function Header() {
                     <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M15 10l4.553-2.276A1 1 0 0121 8.618v6.764a1 1 0 01-1.447.894L15 14M5 18h8a2 2 0 002-2V8a2 2 0 00-2-2H5a2 2 0 00-2 2v8a2 2 0 002 2z" />
                   </svg>
                   <span>TikTok Schrift</span>
+                </Link>
+
+                <Link
+                  href="/whatsapp-schrift"
+                  className="group flex items-center gap-3 px-4 py-3.5 text-sm font-semibold text-slate-700 dark:text-slate-200 hover:bg-emerald-50 dark:hover:bg-emerald-500/10 hover:text-emerald-600 dark:hover:text-emerald-400 rounded-xl transition-all [-webkit-tap-highlight-color:transparent]"
+                  onClick={() => setIsMenuOpen(false)}
+                >
+                  <svg className="w-4 h-4 text-slate-400 group-hover:text-emerald-500 transition-colors" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M8 12h.01M12 12h.01M16 12h.01M21 12c0 4.418-4.03 8-9 8a9.863 9.863 0 01-4.255-.949L3 20l1.395-3.72C3.512 15.042 3 13.574 3 12c0-4.418 4.03-8 9-8s9 3.582 9 8z" />
+                  </svg>
+                  <span>WhatsApp Schrift</span>
                 </Link>
 
 
