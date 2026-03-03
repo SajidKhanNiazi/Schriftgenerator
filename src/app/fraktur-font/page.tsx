@@ -1,40 +1,40 @@
 import type { Metadata } from 'next';
-import WhatsAppSchriftClient from '@/components/WhatsAppSchriftClient';
+import FrakturFontClient from '@/components/FrakturFontClient';
 import Header from '@/components/Header';
 import Footer from '@/components/Footer';
 
 export const metadata: Metadata = {
-    title: 'WhatsApp Schrift Generator | Stylische Schriften für WhatsApp',
-    description: 'Kostenloser WhatsApp Schrift Generator: Wandle deinen Text sofort in über 20 stylische Unicode-Schriftarten um. Perfekt für WhatsApp Chats, Status & Bio. Einfach kopieren & einfügen!',
+    title: 'Fraktur Schrift Generator | Text in gotische Blackletter-Schrift umwandeln',
+    description: 'Entdecke Frakturtext und gotische Schriftstile. Erstelle einzigartige Nachrichten, Profile und Benutzernamen mit mittelalterlich inspirierten Unicode-Zeichen sofort.',
     keywords: [
-        'WhatsApp Schrift',
-        'WhatsApp Schriftarten',
-        'WhatsApp Schrift Generator',
-        'WhatsApp Text Schrift',
-        'WhatsApp Bio Schrift',
-        'WhatsApp Status Schrift',
-        'coole WhatsApp Schrift',
-        'WhatsApp Schrift kopieren',
-        'stylische WhatsApp Schrift',
-        'WhatsApp Sonderzeichen',
+        'Fraktur Schrift',
+        'Fraktur Schrift Generator',
+        'Gotische Schrift Generator',
+        'Blackletter Schrift',
+        'Altdeutsche Schrift',
+        'Fraktur Text',
+        'Fraktur Unicode',
+        'Mittelalterliche Schrift Generator',
+        'Fraktur kopieren einfügen',
+        'Gotischer Text Generator',
     ],
     openGraph: {
-        title: 'WhatsApp Schrift Generator | Stylische Schriften kopieren & einfügen',
-        description: 'Erstelle coole WhatsApp-Schriftarten für Chats, Status und Bio. Kostenlos & einfach zu nutzen.',
+        title: 'Fraktur Schrift Generator | Gotischer Blackletter Text Konverter',
+        description: 'Verwandle normalen Text in schöne Fraktur-, Gotik- und mittelalterliche Unicode-Stile. Kostenlos, sofort, kein Download nötig.',
         type: 'website',
         locale: 'de_DE',
     },
     alternates: {
-        canonical: '/whatsapp-schrift',
+        canonical: '/fraktur-font',
     },
 };
 
-export default function WhatsAppSchriftPage() {
+export default function FrakturFontPage() {
     return (
         <>
             <Header />
             <main className="min-h-screen bg-transparent pt-20 md:pt-24">
-                <WhatsAppSchriftClient />
+                <FrakturFontClient />
 
                 {/* Structured Data for SEO */}
                 <script
@@ -43,8 +43,8 @@ export default function WhatsAppSchriftPage() {
                         __html: JSON.stringify({
                             '@context': 'https://schema.org',
                             '@type': 'WebApplication',
-                            name: 'WhatsApp Schrift Generator',
-                            description: 'Erstelle coole WhatsApp-Schriftarten für Chats, Status und Bio.',
+                            name: 'Fraktur Schrift Generator',
+                            description: 'Verwandle normalen Text sofort in Fraktur-, Gotik- und altdeutsche Blackletter-Unicode-Stile.',
                             applicationCategory: 'UtilitiesApplication',
                             operatingSystem: 'All',
                             offers: {
@@ -56,6 +56,7 @@ export default function WhatsAppSchriftPage() {
                         }),
                     }}
                 />
+
             </main>
             <Footer />
         </>

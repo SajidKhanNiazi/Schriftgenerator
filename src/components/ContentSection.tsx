@@ -261,7 +261,7 @@ const ContentSection: React.FC = () => {
                         <div className="w-16 md:w-20 h-1.5 bg-emerald-500 rounded-full mx-auto" />
                     </div>
 
-                    <div className="grid gap-5 md:gap-6 md:grid-cols-2 max-w-6xl mx-auto">
+                    <div className="grid gap-4 md:gap-5 max-w-4xl mx-auto">
                         {[
                             {
                                 q: "Was ist ein Instagram Schriftgenerator?",
@@ -311,18 +311,37 @@ const ContentSection: React.FC = () => {
                                 q: "Muss ich eine App herunterladen, um Instagram-Schriften zu erstellen?",
                                 a: "Nein, die meisten Instagram Schriftgeneratoren sind webbasierte Tools. Du kannst sie direkt in deinem Browser nutzen, ohne eine App herunterzuladen."
                             }
-                        ].map((faq, i) => (
-                            <div key={i} className="p-6 md:p-8 glass-premium rounded-[1.5rem] md:rounded-[2.5rem] border border-slate-200/50 dark:border-slate-800/50 hover:border-emerald-500/30 transition-all duration-500 group">
-                                <h3 className="text-lg md:text-xl font-bold text-slate-900 dark:text-white mb-3 md:mb-4 group-hover:text-emerald-500 transition-colors">
-                                    {faq.q}
-                                </h3>
-                                <p className="text-xs md:text-sm text-slate-500 dark:text-slate-400 leading-relaxed font-light">
-                                    {faq.a}
-                                </p>
-                            </div>
-                        ))}
+                        ].map((faq, i) => {
+                            const [isOpen, setIsOpen] = React.useState(false);
+                            return (
+                                <div key={i} className="bg-slate-50/50 dark:bg-slate-900/30 rounded-2xl border border-slate-100 dark:border-slate-800/60 overflow-hidden transition-all duration-300">
+                                    <button
+                                        onClick={() => setIsOpen(!isOpen)}
+                                        className="w-full flex items-center justify-between px-6 py-5 text-left group"
+                                    >
+                                        <h3 className="text-sm md:text-base font-bold text-slate-900 dark:text-white pr-4 group-hover:text-emerald-500 transition-colors">
+                                            {faq.q}
+                                        </h3>
+                                        <div className={`flex-shrink-0 w-8 h-8 rounded-full flex items-center justify-center transition-all duration-300 ${isOpen
+                                            ? 'bg-emerald-500 text-white rotate-180'
+                                            : 'bg-slate-100 dark:bg-slate-800 text-slate-400'
+                                            }`}>
+                                            <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2.5} d="M19 9l-7 7-7-7" />
+                                            </svg>
+                                        </div>
+                                    </button>
+                                    <div className={`transition-all duration-300 ease-in-out overflow-hidden ${isOpen ? 'max-h-[300px] opacity-100' : 'max-h-0 opacity-0'}`}>
+                                        <div className="px-6 pb-6 text-sm text-slate-500 dark:text-slate-400 leading-relaxed font-light pt-1 border-t border-slate-100/50 dark:border-slate-800/50">
+                                            {faq.a}
+                                        </div>
+                                    </div>
+                                </div>
+                            );
+                        })}
                     </div>
                 </div>
+
 
             </div>
         </section>

@@ -282,19 +282,21 @@ export default function InstagramSchriftClient() {
             {/* ═══════════════════════════════════════════
                 HERO-BEREICH
             ═══════════════════════════════════════════ */}
-            <section className="relative pt-6 pb-14 md:pb-24 overflow-hidden bg-gradient-to-b from-slate-50 via-white to-slate-50 dark:from-slate-950 dark:via-slate-900 dark:to-slate-950">
-                {/* Animated floating orbs */}
+            <section className="relative pt-6 pb-14 md:pb-24 overflow-hidden bg-[var(--bg-primary)]">
+                {/* Background effects */}
+                <div className="absolute inset-0 bg-mesh-dark pointer-events-none" />
+                <div className="absolute inset-0 bg-grid-pattern pointer-events-none opacity-20" />
                 <div className="absolute inset-0 overflow-hidden pointer-events-none">
                     <div
-                        className="absolute top-[-8%] left-[-8%] w-[35%] h-[35%] bg-emerald-500/8 rounded-full blur-[100px]"
+                        className="absolute top-[-8%] left-[-8%] w-[35%] h-[35%] bg-emerald-500/5 rounded-full blur-[100px]"
                         style={{ animation: 'float-slow 20s ease-in-out infinite' }}
                     />
                     <div
-                        className="absolute bottom-[10%] right-[-5%] w-[30%] h-[30%] bg-teal-500/8 rounded-full blur-[80px]"
+                        className="absolute bottom-[10%] right-[-5%] w-[30%] h-[30%] bg-teal-500/5 rounded-full blur-[80px]"
                         style={{ animation: 'float-slow 25s ease-in-out infinite', animationDelay: '-8s' }}
                     />
                     <div
-                        className="absolute top-[30%] right-[15%] w-[18%] h-[18%] bg-blue-500/5 rounded-full blur-[60px]"
+                        className="absolute top-[30%] right-[15%] w-[18%] h-[18%] bg-blue-500/3 rounded-full blur-[60px]"
                         style={{ animation: 'float-slow 18s ease-in-out infinite', animationDelay: '-4s' }}
                     />
                 </div>
@@ -393,7 +395,7 @@ export default function InstagramSchriftClient() {
             {/* ═══════════════════════════════════════════
                 SCHRIFT-BEREICHE
             ═══════════════════════════════════════════ */}
-            <div className="py-10 md:py-14 bg-slate-50/50 dark:bg-slate-950">
+            <div className="py-10 md:py-14 bg-transparent">
                 <div className="container mx-auto px-4 md:px-5 space-y-12 md:space-y-16">
                     {fontSections.map((section, sIdx) => (
                         <section

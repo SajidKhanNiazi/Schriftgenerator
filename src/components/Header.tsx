@@ -6,55 +6,67 @@ import { useState, useEffect } from 'react';
 export default function Header() {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
   const [isMounted, setIsMounted] = useState(false);
+  const [scrolled, setScrolled] = useState(false);
 
   useEffect(() => {
     setIsMounted(true);
+    const handleScroll = () => setScrolled(window.scrollY > 20);
+    window.addEventListener('scroll', handleScroll, { passive: true });
+    return () => window.removeEventListener('scroll', handleScroll);
   }, []);
 
   return (
     <header id="main-header" className="fixed top-4 left-0 right-0 z-50 flex justify-center px-4">
-      <nav className="w-full max-w-5xl glass-premium rounded-full border border-slate-200/50 dark:border-slate-800/50 shadow-xl shadow-slate-200/20 dark:shadow-slate-900/40 transition-all duration-300">
-        <div className="container mx-auto px-6 max-w-7xl">
-          <div className="flex justify-between items-center h-14 md:h-16">
+      <nav className={`w-full max-w-5xl rounded-2xl border transition-all duration-500 ${scrolled
+          ? 'glass-premium shadow-xl shadow-black/5 dark:shadow-black/20 border-white/30 dark:border-white/[0.06]'
+          : 'bg-white/40 dark:bg-slate-950/40 backdrop-blur-xl border-slate-200/40 dark:border-slate-800/30 shadow-lg shadow-black/[0.02]'
+        }`}>
+        <div className="container mx-auto px-5 max-w-7xl">
+          <div className="flex justify-between items-center h-14 md:h-[60px]">
             {/* Logo */}
-            <Link href="/" className="group flex items-center gap-2">
-              <div className="w-8 h-8 bg-gradient-to-br from-emerald-400 to-teal-500 rounded-lg flex items-center justify-center shadow-lg shadow-emerald-500/20 group-hover:rotate-6 transition-transform duration-300">
-                <span className="text-white font-black text-xs">SG</span>
+            <Link href="/" className="group flex items-center gap-2.5">
+              <div className="relative w-8 h-8 bg-gradient-to-br from-emerald-400 via-green-500 to-teal-500 rounded-xl flex items-center justify-center shadow-lg shadow-emerald-500/25 group-hover:shadow-emerald-500/40 group-hover:scale-110 transition-all duration-300">
+                <span className="text-white font-black text-[10px] tracking-tight">SG</span>
+                <div className="absolute inset-0 rounded-xl bg-white/20 opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
               </div>
-              <span className="text-lg md:text-xl font-black tracking-tighter text-slate-900 dark:text-white transition-transform group-hover:scale-105 duration-300">
+              <span className="text-base md:text-lg font-display font-extrabold tracking-tight text-slate-900 dark:text-white">
                 Schriftgenerator
               </span>
             </Link>
 
             {/* Links & Badge */}
-            <div className="flex items-center gap-4 md:gap-8">
-              <div className="hidden md:flex items-center gap-6 text-[10px] font-black uppercase tracking-widest text-slate-500 dark:text-slate-400">
-                <Link href="/instagram-schrift" className="hover:text-emerald-500 transition-colors relative group/link">
+            <div className="flex items-center gap-3 md:gap-6">
+              <div className="hidden md:flex items-center gap-5 text-[11px] font-semibold uppercase tracking-[0.12em] text-slate-500 dark:text-slate-400">
+                <Link href="/instagram-schrift" className="hover:text-emerald-500 transition-colors duration-300 relative group/link py-1">
                   Instagram Schrift
-                  <span className="absolute -bottom-1 left-0 w-0 h-0.5 bg-emerald-500 transition-all group-hover/link:w-full" />
+                  <span className="absolute -bottom-0.5 left-0 w-0 h-[2px] bg-gradient-to-r from-emerald-400 to-teal-400 rounded-full transition-all duration-300 group-hover/link:w-full" />
                 </Link>
-                <Link href="/tiktok-schriftarten" className="hover:text-emerald-500 transition-colors relative group/link">
+                <Link href="/tiktok-schriftarten" className="hover:text-emerald-500 transition-colors duration-300 relative group/link py-1">
                   TikTok Schrift
-                  <span className="absolute -bottom-1 left-0 w-0 h-0.5 bg-emerald-500 transition-all group-hover/link:w-full" />
+                  <span className="absolute -bottom-0.5 left-0 w-0 h-[2px] bg-gradient-to-r from-emerald-400 to-teal-400 rounded-full transition-all duration-300 group-hover/link:w-full" />
                 </Link>
-                <Link href="/whatsapp-schrift" className="hover:text-emerald-500 transition-colors relative group/link">
+                <Link href="/whatsapp-schrift" className="hover:text-emerald-500 transition-colors duration-300 relative group/link py-1">
                   WhatsApp Schrift
-                  <span className="absolute -bottom-1 left-0 w-0 h-0.5 bg-emerald-500 transition-all group-hover/link:w-full" />
+                  <span className="absolute -bottom-0.5 left-0 w-0 h-[2px] bg-gradient-to-r from-emerald-400 to-teal-400 rounded-full transition-all duration-300 group-hover/link:w-full" />
                 </Link>
-                <Link href="/ueber-uns" className="hover:text-emerald-500 transition-colors relative group/link">
+                <Link href="/fraktur-font" className="hover:text-emerald-500 transition-colors duration-300 relative group/link py-1">
+                  Fraktur Font
+                  <span className="absolute -bottom-0.5 left-0 w-0 h-[2px] bg-gradient-to-r from-emerald-400 to-teal-400 rounded-full transition-all duration-300 group-hover/link:w-full" />
+                </Link>
+                <Link href="/ueber-uns" className="hover:text-emerald-500 transition-colors duration-300 relative group/link py-1">
                   Über uns
-                  <span className="absolute -bottom-1 left-0 w-0 h-0.5 bg-emerald-500 transition-all group-hover/link:w-full" />
+                  <span className="absolute -bottom-0.5 left-0 w-0 h-[2px] bg-gradient-to-r from-emerald-400 to-teal-400 rounded-full transition-all duration-300 group-hover/link:w-full" />
                 </Link>
               </div>
 
-              <div className="hidden sm:flex items-center gap-2 px-4 py-1.5 bg-emerald-500 text-white rounded-full text-[10px] font-black uppercase tracking-widest shadow-lg shadow-emerald-500/20 hover:scale-105 transition-transform duration-300 cursor-default">
+              <div className="hidden sm:flex items-center gap-2 px-4 py-1.5 bg-gradient-to-r from-emerald-500 to-teal-500 text-white rounded-full text-[10px] font-bold uppercase tracking-widest shadow-lg shadow-emerald-500/20 hover:shadow-emerald-500/40 hover:scale-105 transition-all duration-300 cursor-default">
                 <span className="w-1.5 h-1.5 bg-white rounded-full animate-pulse"></span>
                 Kostenlos
               </div>
 
               {/* Mobile Menu Button */}
               <button
-                className="md:hidden p-2 text-slate-600 dark:text-slate-400"
+                className="md:hidden p-2 text-slate-600 dark:text-slate-400 hover:text-emerald-500 transition-colors"
                 onClick={() => setIsMenuOpen(!isMenuOpen)}
                 aria-label="Open menu"
               >
@@ -67,11 +79,11 @@ export default function Header() {
 
           {/* Mobile Navigation */}
           {isMounted && isMenuOpen && (
-            <div className="md:hidden pt-3 pb-5 border-t border-slate-200 dark:border-slate-700 bg-white dark:bg-slate-900 animate-fade-in">
-              <div className="flex flex-col gap-1 px-2">
+            <div className="md:hidden pt-3 pb-5 border-t border-slate-200/50 dark:border-slate-800/50 animate-fade-in">
+              <div className="flex flex-col gap-0.5 px-1">
                 <Link
                   href="/"
-                  className="group flex items-center gap-3 px-4 py-3.5 text-sm font-semibold text-slate-700 dark:text-slate-200 hover:bg-emerald-50 dark:hover:bg-emerald-500/10 hover:text-emerald-600 dark:hover:text-emerald-400 rounded-xl transition-all [-webkit-tap-highlight-color:transparent]"
+                  className="group flex items-center gap-3 px-4 py-3 text-sm font-medium text-slate-700 dark:text-slate-200 hover:bg-emerald-50/80 dark:hover:bg-emerald-500/10 hover:text-emerald-600 dark:hover:text-emerald-400 rounded-xl transition-all [-webkit-tap-highlight-color:transparent]"
                   onClick={() => setIsMenuOpen(false)}
                 >
                   <svg className="w-4 h-4 text-slate-400 group-hover:text-emerald-500 transition-colors" fill="none" stroke="currentColor" viewBox="0 0 24 24">
@@ -82,7 +94,7 @@ export default function Header() {
 
                 <Link
                   href="/instagram-schrift"
-                  className="group flex items-center gap-3 px-4 py-3.5 text-sm font-semibold text-slate-700 dark:text-slate-200 hover:bg-emerald-50 dark:hover:bg-emerald-500/10 hover:text-emerald-600 dark:hover:text-emerald-400 rounded-xl transition-all [-webkit-tap-highlight-color:transparent]"
+                  className="group flex items-center gap-3 px-4 py-3 text-sm font-medium text-slate-700 dark:text-slate-200 hover:bg-emerald-50/80 dark:hover:bg-emerald-500/10 hover:text-emerald-600 dark:hover:text-emerald-400 rounded-xl transition-all [-webkit-tap-highlight-color:transparent]"
                   onClick={() => setIsMenuOpen(false)}
                 >
                   <svg className="w-4 h-4 text-slate-400 group-hover:text-emerald-500 transition-colors" fill="none" stroke="currentColor" viewBox="0 0 24 24">
@@ -93,7 +105,7 @@ export default function Header() {
 
                 <Link
                   href="/tiktok-schriftarten"
-                  className="group flex items-center gap-3 px-4 py-3.5 text-sm font-semibold text-slate-700 dark:text-slate-200 hover:bg-emerald-50 dark:hover:bg-emerald-500/10 hover:text-emerald-600 dark:hover:text-emerald-400 rounded-xl transition-all [-webkit-tap-highlight-color:transparent]"
+                  className="group flex items-center gap-3 px-4 py-3 text-sm font-medium text-slate-700 dark:text-slate-200 hover:bg-emerald-50/80 dark:hover:bg-emerald-500/10 hover:text-emerald-600 dark:hover:text-emerald-400 rounded-xl transition-all [-webkit-tap-highlight-color:transparent]"
                   onClick={() => setIsMenuOpen(false)}
                 >
                   <svg className="w-4 h-4 text-slate-400 group-hover:text-emerald-500 transition-colors" fill="none" stroke="currentColor" viewBox="0 0 24 24">
@@ -104,7 +116,7 @@ export default function Header() {
 
                 <Link
                   href="/whatsapp-schrift"
-                  className="group flex items-center gap-3 px-4 py-3.5 text-sm font-semibold text-slate-700 dark:text-slate-200 hover:bg-emerald-50 dark:hover:bg-emerald-500/10 hover:text-emerald-600 dark:hover:text-emerald-400 rounded-xl transition-all [-webkit-tap-highlight-color:transparent]"
+                  className="group flex items-center gap-3 px-4 py-3 text-sm font-medium text-slate-700 dark:text-slate-200 hover:bg-emerald-50/80 dark:hover:bg-emerald-500/10 hover:text-emerald-600 dark:hover:text-emerald-400 rounded-xl transition-all [-webkit-tap-highlight-color:transparent]"
                   onClick={() => setIsMenuOpen(false)}
                 >
                   <svg className="w-4 h-4 text-slate-400 group-hover:text-emerald-500 transition-colors" fill="none" stroke="currentColor" viewBox="0 0 24 24">
@@ -113,12 +125,23 @@ export default function Header() {
                   <span>WhatsApp Schrift</span>
                 </Link>
 
+                <Link
+                  href="/fraktur-font"
+                  className="group flex items-center gap-3 px-4 py-3 text-sm font-medium text-slate-700 dark:text-slate-200 hover:bg-emerald-50/80 dark:hover:bg-emerald-500/10 hover:text-emerald-600 dark:hover:text-emerald-400 rounded-xl transition-all [-webkit-tap-highlight-color:transparent]"
+                  onClick={() => setIsMenuOpen(false)}
+                >
+                  <svg className="w-4 h-4 text-slate-400 group-hover:text-emerald-500 transition-colors" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M11 5H6a2 2 0 00-2 2v11a2 2 0 002 2h11a2 2 0 002-2v-5m-1.414-9.414a2 2 0 112.828 2.828L11.828 15H9v-2.828l8.586-8.586z" />
+                  </svg>
+                  <span>Fraktur Font</span>
+                </Link>
+
 
                 <div className="h-px bg-slate-100 dark:bg-slate-800 my-2 mx-4" />
 
                 <Link
                   href="/impressum"
-                  className="group flex items-center gap-3 px-4 py-3.5 text-sm font-semibold text-slate-700 dark:text-slate-200 hover:bg-emerald-50 dark:hover:bg-emerald-500/10 hover:text-emerald-600 dark:hover:text-emerald-400 rounded-xl transition-all [-webkit-tap-highlight-color:transparent]"
+                  className="group flex items-center gap-3 px-4 py-3 text-sm font-medium text-slate-700 dark:text-slate-200 hover:bg-emerald-50/80 dark:hover:bg-emerald-500/10 hover:text-emerald-600 dark:hover:text-emerald-400 rounded-xl transition-all [-webkit-tap-highlight-color:transparent]"
                   onClick={() => setIsMenuOpen(false)}
                 >
                   <svg className="w-4 h-4 text-slate-400 group-hover:text-emerald-500 transition-colors" fill="none" stroke="currentColor" viewBox="0 0 24 24">
@@ -129,7 +152,7 @@ export default function Header() {
 
                 <Link
                   href="/datenschutz"
-                  className="group flex items-center gap-3 px-4 py-3.5 text-sm font-semibold text-slate-700 dark:text-slate-200 hover:bg-emerald-50 dark:hover:bg-emerald-500/10 hover:text-emerald-600 dark:hover:text-emerald-400 rounded-xl transition-all [-webkit-tap-highlight-color:transparent]"
+                  className="group flex items-center gap-3 px-4 py-3 text-sm font-medium text-slate-700 dark:text-slate-200 hover:bg-emerald-50/80 dark:hover:bg-emerald-500/10 hover:text-emerald-600 dark:hover:text-emerald-400 rounded-xl transition-all [-webkit-tap-highlight-color:transparent]"
                   onClick={() => setIsMenuOpen(false)}
                 >
                   <svg className="w-4 h-4 text-slate-400 group-hover:text-emerald-500 transition-colors" fill="none" stroke="currentColor" viewBox="0 0 24 24">
@@ -138,7 +161,7 @@ export default function Header() {
                   <span>Datenschutz</span>
                 </Link>
 
-                <div className="mt-3 mx-4 p-3 mb-8 bg-emerald-50 dark:bg-emerald-500/10 rounded-xl border border-emerald-100 dark:border-emerald-500/20">
+                <div className="mt-3 mx-3 p-3.5 bg-gradient-to-r from-emerald-50 to-teal-50 dark:from-emerald-500/10 dark:to-teal-500/10 rounded-xl border border-emerald-100 dark:border-emerald-500/20">
                   <div className="flex items-center gap-2">
                     <span className="w-1.5 h-1.5 rounded-full bg-emerald-500 animate-pulse" />
                     <span className="text-xs font-bold text-emerald-600 dark:text-emerald-400">100% Kostenlos</span>

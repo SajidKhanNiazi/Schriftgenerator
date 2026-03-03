@@ -93,7 +93,6 @@ export default function WhatsAppSchriftClient() {
     const [showToast, setShowToast] = useState(false);
     const [toastMessage, setToastMessage] = useState('Text kopiert!');
     const [copiedId, setCopiedId] = useState<string | null>(null);
-    const [isDark, setIsDark] = useState(false);
     const [currentTime, setCurrentTime] = useState<string>('');
 
     // Hydration fix for time
@@ -106,15 +105,6 @@ export default function WhatsAppSchriftClient() {
         const t = setTimeout(() => setDebouncedText(inputText), 200);
         return () => clearTimeout(t);
     }, [inputText]);
-
-    // Dark mode toggle
-    useEffect(() => {
-        if (isDark) {
-            document.documentElement.classList.add('dark');
-        } else {
-            document.documentElement.classList.remove('dark');
-        }
-    }, [isDark]);
 
     // Intersection Observer for scroll reveal
     useEffect(() => {
@@ -214,35 +204,20 @@ export default function WhatsAppSchriftClient() {
             {/* ═══════════════════════════════════════════
                 HERO-BEREICH
             ═══════════════════════════════════════════ */}
-            <section className="relative pt-6 pb-10 md:pb-20 overflow-hidden bg-gradient-to-b from-slate-50 via-white to-slate-50 dark:from-slate-950 dark:via-slate-900 dark:to-slate-950">
-                {/* Animated floating orbs */}
+            <section className="relative pt-6 pb-10 md:pb-20 overflow-hidden bg-[var(--bg-primary)]">
+                {/* Background effects */}
+                <div className="absolute inset-0 bg-mesh-dark pointer-events-none" />
+                <div className="absolute inset-0 bg-grid-pattern pointer-events-none opacity-20" />
                 <div className="absolute inset-0 overflow-hidden pointer-events-none hidden sm:block">
                     <div
-                        className="absolute top-[-8%] left-[-8%] w-[35%] h-[35%] bg-green-500/10 rounded-full blur-[100px]"
+                        className="absolute top-[-8%] left-[-8%] w-[35%] h-[35%] bg-green-500/5 rounded-full blur-[100px]"
                         style={{ animation: 'float-slow 20s ease-in-out infinite' }}
                     />
                     <div
-                        className="absolute bottom-[10%] right-[-5%] w-[30%] h-[30%] bg-emerald-500/10 rounded-full blur-[80px]"
+                        className="absolute bottom-[10%] right-[-5%] w-[30%] h-[30%] bg-emerald-500/5 rounded-full blur-[80px]"
                         style={{ animation: 'float-slow 25s ease-in-out infinite', animationDelay: '-8s' }}
                     />
                 </div>
-
-                {/* Dark mode toggle — top right */}
-                <button
-                    onClick={() => setIsDark(!isDark)}
-                    className="absolute top-4 right-4 md:top-6 md:right-8 z-20 p-2.5 rounded-xl bg-white/80 dark:bg-slate-800/80 backdrop-blur border border-slate-200/50 dark:border-slate-700/50 shadow-lg hover:scale-110 active:scale-95 transition-all duration-300"
-                    aria-label="Dark Mode umschalten"
-                >
-                    {isDark ? (
-                        <svg className="w-5 h-5 text-amber-400" fill="currentColor" viewBox="0 0 20 20">
-                            <path fillRule="evenodd" d="M10 2a1 1 0 011 1v1a1 1 0 11-2 0V3a1 1 0 011-1zm4 8a4 4 0 11-8 0 4 4 0 018 0zm-.464 4.95l.707.707a1 1 0 001.414-1.414l-.707-.707a1 1 0 00-1.414 1.414zm2.12-10.607a1 1 0 010 1.414l-.706.707a1 1 0 11-1.414-1.414l.707-.707a1 1 0 011.414 0zM17 11a1 1 0 100-2h-1a1 1 0 100 2h1zm-7 4a1 1 0 011 1v1a1 1 0 11-2 0v-1a1 1 0 011-1zM5.05 6.464A1 1 0 106.465 5.05l-.708-.707a1 1 0 00-1.414 1.414l.707.707zm1.414 8.486l-.707.707a1 1 0 01-1.414-1.414l.707-.707a1 1 0 011.414 1.414zM4 11a1 1 0 100-2H3a1 1 0 000 2h1z" clipRule="evenodd" />
-                        </svg>
-                    ) : (
-                        <svg className="w-5 h-5 text-slate-600" fill="currentColor" viewBox="0 0 20 20">
-                            <path d="M17.293 13.293A8 8 0 016.707 2.707a8.001 8.001 0 1010.586 10.586z" />
-                        </svg>
-                    )}
-                </button>
 
                 <div className="container mx-auto px-3 sm:px-4 md:px-6 relative z-10 text-center">
                     <div className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-green-500/10 border border-green-500/20 text-green-600 dark:text-green-400 text-xs font-bold uppercase tracking-widest mb-6 animate-slide-up">
@@ -528,7 +503,7 @@ export default function WhatsAppSchriftClient() {
                                 <div className="w-24 h-1.5 bg-green-500 mx-auto rounded-full" />
                             </div>
 
-                            <div className="grid grid-cols-1 gap-4">
+                            <div className="grid grid-cols-1 gap-4 max-w-4xl mx-auto">
                                 {[
                                     { q: 'Can I change the font in WhatsApp itself?', a: <>No, WhatsApp doesn’t let you change the app’s default font inside the app. You can only use built-in formatting like bold, italics, or strikethrough, or use external tools and <a href="https://schriftenpro.de/" className="text-green-500 hover:text-green-600 font-bold underline underline-offset-4 decoration-green-400/30">font generator</a> sites to style your text before you copy/paste it into WhatsApp.</> },
                                     { q: 'How can I change the font for my messages or WhatsApp bio?', a: 'You can use WhatsApp font generator tools online that convert your normal text into stylish, Unicode-based fonts (like cursive, bold, bubble, gothic, etc.) and then copy/paste that styled text into your WhatsApp messages, status, bio or group names.' },
@@ -538,24 +513,45 @@ export default function WhatsAppSchriftClient() {
                                     { q: 'Do these tools require download or installation?', a: 'Most are web-based, so you just type, choose your style, and copy — no installation is needed.' },
                                     { q: 'Why can’t I change the WhatsApp font from the app itself?', a: 'WhatsApp uses a standard system font and doesn\'t allow internal customization of typefaces — you can only use external generators or formatting tricks because WhatsApp itself doesn\'t include full font choices.' },
                                     { q: 'Do all styled fonts always show on every device?', a: 'Not always — some very decorative styles or uncommon Unicode characters might not display correctly on all phones. Most basic styles work fine though.' }
-                                ].map((faq, i) => (
-                                    <div key={i} className="group p-5 md:p-6 bg-white dark:bg-slate-800/40 border border-slate-100 dark:border-slate-800 rounded-[1.5rem] hover:border-green-500/30 hover:shadow-xl hover:shadow-green-500/5 transition-all duration-300">
-                                        <div className="flex gap-4">
-                                            <span className="flex-shrink-0 w-8 h-8 rounded-full bg-green-500/10 text-green-600 dark:text-green-400 flex items-center justify-center font-bold text-sm">Q</span>
-                                            <p className="font-black text-slate-900 dark:text-white mb-4 text-lg tracking-tight leading-tight m-0">
-                                                {faq.q}
-                                            </p>
+                                ].map((faq, i) => {
+                                    const [isOpen, setIsOpen] = useState(false);
+                                    return (
+                                        <div key={i} className="bg-white dark:bg-slate-800/40 border border-slate-100 dark:border-slate-800 rounded-2xl overflow-hidden transition-all duration-300 hover:border-green-500/20">
+                                            <button
+                                                onClick={() => setIsOpen(!isOpen)}
+                                                className="w-full flex items-center justify-between px-6 py-5 text-left group"
+                                            >
+                                                <div className="flex items-center gap-4">
+                                                    <span className="flex-shrink-0 w-8 h-8 rounded-full bg-green-500/10 text-green-600 dark:text-green-400 flex items-center justify-center font-bold text-sm">Q</span>
+                                                    <h3 className="font-black text-slate-900 dark:text-white text-lg tracking-tight leading-tight m-0 group-hover:text-green-500 transition-colors">
+                                                        {faq.q}
+                                                    </h3>
+                                                </div>
+                                                <div className={`flex-shrink-0 w-8 h-8 rounded-full flex items-center justify-center transition-all duration-300 ${isOpen
+                                                    ? 'bg-green-500 text-white rotate-180'
+                                                    : 'bg-slate-100 dark:bg-slate-700/50 text-slate-400'
+                                                    }`}>
+                                                    <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                                        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2.5} d="M19 9l-7 7-7-7" />
+                                                    </svg>
+                                                </div>
+                                            </button>
+                                            <div className={`transition-all duration-300 ease-in-out overflow-hidden ${isOpen ? 'max-h-[300px] opacity-100' : 'max-h-0 opacity-0'}`}>
+                                                <div className="px-6 pb-6 pt-2 border-t border-slate-100/50 dark:border-slate-800/50">
+                                                    <div className="flex gap-4">
+                                                        <span className="flex-shrink-0 w-8 h-8 rounded-full bg-slate-100 dark:bg-slate-700/50 text-slate-500 dark:text-slate-400 flex items-center justify-center font-bold text-sm">A</span>
+                                                        <p className="text-slate-600 dark:text-slate-400 leading-relaxed m-0 text-base">
+                                                            {faq.a}
+                                                        </p>
+                                                    </div>
+                                                </div>
+                                            </div>
                                         </div>
-                                        <div className="flex gap-4">
-                                            <span className="flex-shrink-0 w-8 h-8 rounded-full bg-slate-100 dark:bg-slate-700/50 text-slate-500 dark:text-slate-400 flex items-center justify-center font-bold text-sm">A</span>
-                                            <p className="text-slate-600 dark:text-slate-400 leading-relaxed m-0 text-base">
-                                                {faq.a}
-                                            </p>
-                                        </div>
-                                    </div>
-                                ))}
+                                    );
+                                })}
                             </div>
                         </div>
+
                     </div>
                 </div>
             </section>

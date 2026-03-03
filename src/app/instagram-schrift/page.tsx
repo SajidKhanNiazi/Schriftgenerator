@@ -33,7 +33,7 @@ export default function InstagramSchriftPage() {
     return (
         <>
             <Header />
-            <main className="min-h-screen bg-slate-50 dark:bg-slate-950 pt-20 md:pt-24">
+            <main className="min-h-screen bg-transparent pt-20 md:pt-24">
                 <InstagramSchriftClient />
 
                 {/* Structured Data for SEO */}

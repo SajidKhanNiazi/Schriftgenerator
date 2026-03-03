@@ -47,7 +47,7 @@ export default function Home() {
     <>
       <Header />
 
-      <main className="min-h-screen bg-slate-50 dark:bg-slate-950">
+      <main className="min-h-screen bg-transparent">
         {/* Hero Section */}
         <section className="relative pt-24 md:pt-32 pb-10 md:pb-16 overflow-hidden bg-gradient-to-b from-white to-slate-50/80 dark:from-slate-950 dark:to-slate-900/50">
           <div className="absolute top-0 right-0 w-80 h-80 bg-emerald-200/30 dark:bg-emerald-900/10 rounded-full blur-3xl -z-10" />
